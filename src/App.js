@@ -1,16 +1,20 @@
 import './App.css';
 import React from 'react';
-import Navbar from './components/Navbar';
-import Logo from './components/Logo';
+import { Routes, Route, Link } from 'react-router-dom';
+import UFList from './components/UFList';
+import Error from './components/Error404';
 
 function App() {
   return (
     <div className='App'>
-      <Logo />
-      <Navbar />
+      <Link to='/'>HOME</Link>
+
+      <Routes >        
+        <Route path='/' element= {<UFList/>} />
+        <Route path='*' element= {<Error/>} />
+      </Routes>
     </div>
   );
 }
 
 export default App;
- 
